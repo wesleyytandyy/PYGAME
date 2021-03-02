@@ -15,6 +15,15 @@ class Ship:
 
         # Start each ship at the bottom center of the screem
         self.rect.midbottom = self.screen_rect.midbottom
+        self.moving_right = False
+        self.moving_left = False
+
+    def update(self):
+        """update the ships position based on the movement falg"""
+        if self.moving_right:
+            self.rect.x += 1
+        if self.moving_left:
+            self.rect.x -= 1
 
     def blitme(self):
         """Draw the ship at its current location"""
