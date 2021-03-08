@@ -86,6 +86,9 @@ class AlienInvasion:
                 self.bullets.remove(bullet)
         print(len(self.bullets))
 
+        # Check for any bullets that have hit aliens if so, get rid of the bullet and the and the alien
+        collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
+
     def _update_screen(self):
         """ Update images on the screen, and flip to the new screen"""
         self.screen.fill(self.settings.bg_color)
